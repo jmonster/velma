@@ -3,10 +3,13 @@
 ## examples
 
 ```javascript
-var Velma = require('velma');
-var velma = new Velma({host:'localhost',port:9200});
+var Velma = require('velma')
+  , velma = new Velma({
+              host:'localhost',
+              port:9200
+            });
 
-// get by id
+// get record by id
 velma.get('index', 'type', 'id', function(error,response,body){
   if (error) throw error;
   console.dir(body);
@@ -20,10 +23,10 @@ velma.put('movies', 'movie', 1, {"year":1972},
   }
 );
 
-// delet a single record
+// delete a single record
 velma.delete('movies', 'movie', 1,
   function(error, response, body) {
-    console.log(r,b);
+    console.log(body);
   }
 );
 
