@@ -1,4 +1,4 @@
-
+![logo](https://raw.github.com/jmonster/velma/master/logo.jpg)
 
 ## examples
 
