@@ -1,5 +1,11 @@
 ![logo](https://raw.github.com/jmonster/velma/master/logo.jpg)
 
+## client
+An [ES (elasticsearch)](http://www.elasticsearch.org) client is inherently simple thats to the fact that ES exposes a RESTful http interface. This library seeks to streamline and simplify interfacing with ES by lightly abstracting the http layer away and giving some syntactic sugar for various requests such as bulk, search, etc.
+
+## commands
+This module has a very shallow learning curve since there are only a handful of commands (get,put,post,delete,search,mapping and bulk). The power, and subsequent learning curve, comes with utilizing [ES's query syntax](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl.html). I've also found [this blog entry](http://joelabrahamsson.com/elasticsearch-101/) helpful at getting my feet wet with ES.
+
 ## examples
 
 ```javascript
