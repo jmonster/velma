@@ -55,19 +55,34 @@ Velma.prototype.request = function(method, idx, type, id, body, ret) {
   request(httpOptions, ret);
 };
 
-Velma.prototype.search = function(query,ret) {
+Velma.prototype.search = function(idx,type,query,ret) {
+  // adjust arguments because idx and type are optional
+  ret   = arguments[arguments.length-1];
+  query = arguments[arguments.length-2];
+  if (idx === arguments[arguments.length-2]) { idx = null  }
+  if (!type ||
+       type === arguments[arguments.length-2] ||
+       type === arguments[arguments.length-1]) { type = null }
+
+
+  // compose the search path
+  var path = '';
+  if (idx)  path += '/'+idx;
+  if (type) path += '/'+type;
+  path += '/_search';
+
+
   var httpOptions = {
-    path:     '/_search',
+    path:     path,
     hostname: this.host,
     port:     this.port,
     method:   'post'
   };
 
-  var json            = JSON.stringify(query);
-  httpOptions.json    = json;
+  httpOptions.json    = JSON.stringify(query);
   httpOptions.headers = {
     'Content-Type':'application/json',
-    'Content-Length':json.length
+    'Content-Length':httpOptions.json.length
   };
 
   return request(httpOptions, ret);
