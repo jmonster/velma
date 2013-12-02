@@ -20,6 +20,9 @@ velma.search(           {"query":{"match_all": {}}}, function(error,results) { c
 velma.search(index,     {"query":{"match_all": {}}}, function(error,results) { console.log(results); })
 velma.search(index,type,{"query":{"match_all": {}}}, function(error,results) { console.log(results); })
 
+// create record without an id
+velma.post('events','new-session',null,{"token":"TOKEN","timestamp":"123456789","session":"SESSIONID"},function(e,b) { console.log(e,result); })
+
 // get record by id
 velma.get('index', 'type', 'id', function(error,results){
   if (error) throw error;

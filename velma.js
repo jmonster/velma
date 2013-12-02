@@ -28,7 +28,10 @@ Velma.prototype.delete = function(idx, type, id, ret) {
 }
 
 Velma.prototype.request = function(method, idx, type, id, body, ret) {
-  path = [idx,type,id].join('/')
+  var path;
+
+  if (!id) { path = [idx,type].join('/')    }
+  else     { path = [idx,type,id].join('/') }
 
   var httpOptions = {
     path:     path,
