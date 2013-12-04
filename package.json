@@ -1,6 +1,6 @@
 {
   "name": "velma",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "elasticsearch client built atop node's http library",
   "main": "velma.js",
   "scripts": {

@@ -45,7 +45,7 @@ Velma.prototype.request = function(method, idx, type, id, body, ret) {
     var json            = JSON.stringify(body);
     httpOptions.json    = json;
     httpOptions.headers = {
-      'Content-Type':'application/json',
+      'Content-Type':'application/json; charset=UTF-8',
       'Content-Length':json.length
     };
   }
