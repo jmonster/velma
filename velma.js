@@ -42,11 +42,14 @@ Velma.prototype.request = function(method, idx, type, id, body, ret) {
 
   // PUT + POST
   if (body) {
-    var json            = JSON.stringify(body);
-    httpOptions.json    = json;
+    var json   = JSON.stringify(body)
+      , buffer = new Buffer(json)
+      ;
+
+    httpOptions.json    = buffer;
     httpOptions.headers = {
       'Content-Type':'application/json; charset=UTF-8',
-      'Content-Length':json.length
+      'Content-Length':buffer.length
     };
   }
 
