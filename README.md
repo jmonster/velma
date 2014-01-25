@@ -1,3 +1,5 @@
+**this project is abandoned**, please use the [official ElasticSearch client](https://github.com/elasticsearch/elasticsearch-js) instead!
+
 ![logo](https://raw.github.com/jmonster/velma/master/logo.jpg)
 
 ## client
